@@ -1,0 +1,47 @@
+import numpy as np
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize
+
+# Define the stocks to include in the portfolio
+stocks = ['AAPL', 'MSFT', 'GOOGL', 'AMZN']
+
+# Download historical data as dataframe
+data = yf.download(stocks, start="2020-01-01", end="2022-12-31")['Adj Close']
+
+# Calculate daily returns
+returns = data.pct_change()
+
+# Define objective function (negative Sharpe Ratio)
+def objective(weights): 
+    weights = np.array(weights)
+    ret = np.sum(returns.mean() * weights) * 252
+    vol = np.sqrt(np.dot(weights.T, np.dot(returns.cov() * 252, weights)))
+    return -ret / vol
+
+# Constraints
+cons = ({'type':'eq', 'fun': lambda x: np.sum(x) - 1})
+
+# Initial guess
+guess = len(stocks) * [1. / len(stocks),]
+
+# Optimization
+opt_results = minimize(objective, guess, method='SLSQP', bounds=bnds, constraints=cons)
+
+# Get optimal weights
+opt_weights = opt_results.x
+
+# Calculate portfolio return and volatility
+ret = np.sum(returns.mean() * opt_weights) * 252
+vol = np.sqrt(np.dot(opt_weights.T, np.dot(returns.cov() * 252, opt_weights)))
+
+# Print the optimal weights and the expected return and volatility
+for i in range(len(stocks)):
+    print(f'Stock: {stocks[i]}, Weight: {opt_weights[i]:.2f}, Expected return: {ret:.2f}, Volatility: {vol:.2f}')
+
+# Plot pie chart
+plt.figure(figsize=(10, 5))
+plt.pie(opt_weights, labels=stocks, autopct='%1.1f%%')
+plt.title('Optimal Weights')
+plt.show()
