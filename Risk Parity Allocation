@@ -1,0 +1,53 @@
+#Allocation strategy that focuses on allocating capital based on the risk contributed by each asset in the portfolio. 
+#This differs from the Sharpe Ratio approach in that the primary goal is to achieve diversification of risk across various asset classes.
+#
+
+import yfinance as yf
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Fetch historical data
+def fetch_data(tickers, start_date, end_date):
+    data = yf.download(tickers, start=start_date, end=end_date)
+    return data['Adj Close']
+
+# Calculate daily returns and annualized standard deviation (volatility)
+def calculate_volatility(data):
+    daily_returns = data.pct_change().dropna()
+    annualized_volatility = daily_returns.std() * np.sqrt(252)  # 252 trading days in a year
+    return annualized_volatility
+
+# Risk Parity Allocation
+def risk_parity_allocation(volatility):
+    inverse_volatility = 1 / volatility
+    weights = inverse_volatility / np.sum(inverse_volatility)
+    return weights
+
+# Plot a pie chart for the portfolio allocation
+def plot_allocation(weights, tickers):
+    plt.figure(figsize=(10, 6))
+    plt.pie(weights, labels=tickers, autopct='%1.1f%%', startangle=140)
+    plt.axis('equal')
+    plt.title('Risk Parity Portfolio Allocation')
+    plt.show()
+
+# Define parameters
+tickers = ['NVDA','MSFT','spy','tlt']
+start_date = '2022-01-01'
+end_date = '2023-12-31'
+
+# Fetch data
+price_data = fetch_data(tickers, start_date, end_date)
+
+# Calculate annualized volatility for each asset
+volatility = calculate_volatility(price_data)
+
+# Calculate risk parity weights
+risk_parity_weights = risk_parity_allocation(volatility)
+
+# Output the results
+print("Risk Parity Weights:", risk_parity_weights)
+
+# Plotting the allocation
+plot_allocation(risk_parity_weights, tickers)
