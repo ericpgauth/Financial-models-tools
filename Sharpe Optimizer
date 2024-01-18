@@ -1,47 +1,77 @@
-import numpy as np
-import pandas as pd
 import yfinance as yf
+import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 
-# Define the stocks to include in the portfolio
-stocks = ['AAPL', 'MSFT', 'GOOGL', 'AMZN']
+# Define the tickers and the risk-free rate
+tickers = ['spy', 'qqq', 'lqd', 'ushy', 'uso', 'mort']  # Example tickers
+risk_free_rate = 0.04  # Example risk-free rate, can be manually adjusted
 
-# Download historical data as dataframe
-data = yf.download(stocks, start="2020-01-01", end="2022-12-31")['Adj Close']
+# Fetch historical data
+start_date = '2022-01-01'
+end_date = '2023-12-31'
+data = yf.download(tickers, start=start_date, end=end_date)['Adj Close']
 
 # Calculate daily returns
-returns = data.pct_change()
+returns = data.pct_change().dropna()
 
-# Define objective function (negative Sharpe Ratio)
-def objective(weights): 
-    weights = np.array(weights)
-    ret = np.sum(returns.mean() * weights) * 252
-    vol = np.sqrt(np.dot(weights.T, np.dot(returns.cov() * 252, weights)))
-    return -ret / vol
+# Portfolio optimization functions
+def get_portfolio_volatility(weights, mean_returns, cov_matrix):
+    return np.sqrt(np.dot(weights.T, np.dot(cov_matrix, weights)))
 
-# Constraints
-cons = ({'type':'eq', 'fun': lambda x: np.sum(x) - 1})
+def get_portfolio_return(weights, mean_returns):
+    return np.dot(weights, mean_returns)
 
-# Initial guess
-guess = len(stocks) * [1. / len(stocks),]
+def get_negative_sharpe_ratio(weights, mean_returns, cov_matrix, risk_free_rate):
+    p_returns = get_portfolio_return(weights, mean_returns)
+    p_volatility = get_portfolio_volatility(weights, mean_returns, cov_matrix)
+    return -(p_returns - risk_free_rate) / p_volatility
 
-# Optimization
-opt_results = minimize(objective, guess, method='SLSQP', bounds=bnds, constraints=cons)
+def optimize_portfolio(returns, risk_free_rate):
+    mean_returns = returns.mean()
+    cov_matrix = returns.cov()
+    num_assets = len(mean_returns)
+    
+    constraints = ({'type': 'eq', 'fun': lambda x: np.sum(x) - 1},  # Sum of weights is 1
+                   {'type': 'ineq', 'fun': lambda x: x})  # No shorting
+    bounds = tuple((0.05, 0.3) for asset in range(num_assets))  # Min 5%, Max 30% allocation per asset
+    initial_guess = num_assets * [1. / num_assets,]
+    
+    opt_result = minimize(get_negative_sharpe_ratio, initial_guess, args=(mean_returns, cov_matrix, risk_free_rate),
+                          method='SLSQP', bounds=bounds, constraints=constraints)
+    
+    return opt_result
 
-# Get optimal weights
-opt_weights = opt_results.x
+# Perform optimization
+opt_result = optimize_portfolio(returns, risk_free_rate)
+optimal_weights = opt_result.x
+portfolio_return = get_portfolio_return(optimal_weights, returns.mean())
+portfolio_volatility = get_portfolio_volatility(optimal_weights, returns.mean(), returns.cov())
+portfolio_sharpe_ratio = (portfolio_return - risk_free_rate) / portfolio_volatility
 
-# Calculate portfolio return and volatility
-ret = np.sum(returns.mean() * opt_weights) * 252
-vol = np.sqrt(np.dot(opt_weights.T, np.dot(returns.cov() * 252, opt_weights)))
+# Display results
+# Tabular format
+print("Optimized Portfolio Weights:\n")
+print(pd.DataFrame(list(zip(tickers, optimal_weights)), columns=['Ticker', 'Weight']).round(2))
+print("\nPortfolio Return: {:.2f}".format(portfolio_return))
+print("Portfolio Volatility: {:.2f}".format(portfolio_volatility))
+print("Portfolio Sharpe Ratio: {:.2f}".format(portfolio_sharpe_ratio))
 
-# Print the optimal weights and the expected return and volatility
-for i in range(len(stocks)):
-    print(f'Stock: {stocks[i]}, Weight: {opt_weights[i]:.2f}, Expected return: {ret:.2f}, Volatility: {vol:.2f}')
+# Pie chart
+plt.figure(figsize=(10, 6))
+plt.pie(optimal_weights, labels=tickers, autopct='%1.1f%%')
+plt.title('Optimized Portfolio Allocation')
+plt.show()
 
-# Plot pie chart
-plt.figure(figsize=(10, 5))
-plt.pie(opt_weights, labels=stocks, autopct='%1.1f%%')
-plt.title('Optimal Weights')
+# Calculate and plot the portfolio's cumulative returns for the last year
+weighted_returns = returns.dot(optimal_weights)
+cumulative_returns = (1 + weighted_returns).cumprod() - 1
+
+# Line chart for cumulative returns
+plt.figure(figsize=(12, 6))
+cumulative_returns.plot()
+plt.title('Cumulative Portfolio Returns Over the Last Year')
+plt.ylabel('Cumulative Returns (%)')
+plt.xlabel('Date')
 plt.show()
