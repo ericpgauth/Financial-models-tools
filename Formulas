@@ -1,0 +1,58 @@
+#Level I Formulas
+#Quantitative Methods
+FV of single cash flow = FV = PV(1+r)^n
+PV of single cash flow = FV/(1+r)^n
+PV of perpetuity = A / r where A = Payment amount
+FV with continous compounding (cc) FVn = PVe^rs^n
+Effective Annual Rate (EAR) = (1+periodic rate)^m-1 where Period Rate = Stated annual rate/number of compounding periods one year and m = number of compounding periods in one year
+EAR with cc EARcc = e^rs - 1
+Relative Frequency = absolute freq of each interval/Total number of observations
+Cumulative Relative Frequency = Add the relative freqs while proceeding from first to last interval
+Arithmetic Mean x̄ = ̄sum(x)/N
+Weighted Average Mean = Sum(wi*xi)
+Geometric Mean G=(1+r1)(1+r2)...(1+rn)^1/n
+Harmonic Mean HM = n/ sum(1/xi)... with xi > 0 for i = 1,2,...n "N over the sum of the recriprocals
+Mean Absolute Deviation MAD = sum(|xi - x̄)/n
+Percentiles = Ly = (n+1) x y/100
+Quartile = Distribution / 4
+Quintile = Distribution / 5
+Decile = Distrobution / 10
+Range = Max value - Min value
+Population Variance = σ^2 = Sum (xi - μ)^2/N
+Sample Variance = s^2 = Sum(xi - x̄)^2/n-1
+Standard Deviation = Square root of variance value
+Sample Target Semi-Deviation
+Starget = Sqrt(Sum (xi - B)^2/n-1) where B is the target and n is the total number of sample observations
+Coefficient of Variation = CV = Stand Dev of x/Average value of x = Sx/x̄
+Skewness Positive Skew; Mean > Median > Mode
+Skewness Negative Skew; Mean < Median < Mode
+Probability Stated as Odds
+Odds for an event E = P(E)/1-P(E)
+Odds afainst an Event E 1-P(E)/P(E)
+Probability of A or B = P(A or B) = P(A) + P(B) - P(AB)
+Joint Probability of Two Events = P(AB) = P(A|B) x (P(B)
+Conditional Prob of A given B = P(A|B) = P(AB)/P(A)
+Joint Prob of an number of independent events = P(ABCDE) = P(A)*P(B)*P(C)*P(D)*P(E)
+Total Prob Rule = P(A) = P(A|B1)*P(B1) + P(A|B2)*P(B2)+P(A|B3)*P(B3)+ ... P(A|Bn)*P(Bn)
+Expected value of a random variable = E(x) = P(x1)x1 + P(x2)X2 + ... P(xn)xn
+Variance of a Random Variable = σ^2(x) = sum( P(xi)[xi - E(x)]^2)
+Portfolio Expected return = E(Rp) = wi(E(Ri)) + w2 (E(R2)) ... wnE(Rn)
+Portfolio variance = var(Rp) = wa^2σ^2(Ra) + wb^2σ^2+ 2wawbσ(Ra)σ(Rb)p(Ra,Rb)
+Covariance = cov(r1,r2) = E[(Ri-E(Ri)(Rj-E(Rj)]
+Correlation p(ri,rj) = cov(Ri,Rj)/σ(Ri)σ(Rj)
+Bayes Formula P(Event|Information) = [P(Information|Event)/P(Information) ]*P(Event)
+Multiplication rule of counting = n!= n(n-1)(n-2)(n-3)...1
+Multinomial Formula for labeling Problems n! = n!/n1!n2!...nk!
+Combination Formula Ncr = n!/(n-r)!r!
+Permutation formula = nPr= n!/(n-r)!
+Prob for Random Variable given its cumulative distribution function: To find F(x), sum up values of the prob function for all outcomes less than or equal to x
+Prob give nthe discrete uniform function: cumulative distribution function for the nth outcome F(Xn) = nP(X)
+Prob function for a binomial random variable: Prp of x successes in n trials = n!/(n-x)!x! * p^x(1-p)^(n-x)
+Expected value and variance of a binomial random variable = Expected value of X = nP; variance of X = nP(1-p)
+Continuous Uniform Distribution = f(x) = {1/b-a for a < x < b or 0; F(x) = x-a/b-a for a < x < b
+Standardizing a random normal variable = Z = X-μ / σ
+   Approx 50% of all observations fall within +/- (2/3)σ | Approx 68% within μ =/- 1σ | Approx 95% within μ =/- 2σ | Approx 99% within μ =/- 3σ
+Safety First Ratio SFRatio = [E(Rp)-Ri)]/σp Portfolio with the highest ratio is preferred
+Continously Compunded return from t=0 to t=1 r0,1 = ln(S1/S0) with New/old
+Degrees of freedome of Student's T-Distribution df = number of sample observations - 1 = n-1
+Standard error of the sample mean (σ known) = σx = σ/sqrt(n) | (σ unknown) sx=s/sqrt(n)
