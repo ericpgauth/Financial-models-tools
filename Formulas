@@ -1,5 +1,6 @@
 #Level I Formulas
 #Quantitative Methods
+
 FV of single cash flow = FV = PV(1+r)^n
 PV of single cash flow = FV/(1+r)^n
 PV of perpetuity = A / r where A = Payment amount
@@ -56,3 +57,122 @@ Safety First Ratio SFRatio = [E(Rp)-Ri)]/σp Portfolio with the highest ratio is
 Continously Compunded return from t=0 to t=1 r0,1 = ln(S1/S0) with New/old
 Degrees of freedome of Student's T-Distribution df = number of sample observations - 1 = n-1
 Standard error of the sample mean (σ known) = σx = σ/sqrt(n) | (σ unknown) sx=s/sqrt(n)
+Normally Distributed Population with Known Variance
+Confidence Intervals = x̄ +\- Zσ/2 * (σ/sqrt(n)
+   Zσ/2 ~= 1.65 for 90% confidence interval, %5 in each tail
+   Zσ/2 ~= 1.96 for 95% confidence interval, 2.5% in each tail
+   Zσ/2 ~= 2.58 for 99% confidence interval, 0.5% in each tail
+Large sample, Population Variance Unknown. Confidence intervals = x̄ +\- Zα/2 * (s/sqrt(n))
+small smaple, pop variance unknown. Confidence intervals = x̄ +\- Tα/2 * (s/sqrt(n))
+Type I and Type II errors: Type I - Reject H0 when true; Type II - Accept H0 when false
+Power of a test = 1-P(Type II error)
+Test of a single mean Z= (x̄-μ0)/(σ/sqrt(n))  or  Tn-1 = (x̄ - μ)/(s/sqrt(n))
+Test of the difference in means (equal variances) T = (x̄1 - x̄2) - (μ1 - μ2)/ (S1^2/n1 + S2^2/n2)^1/2   where sp^2 = (n1-1)s1^2 + (n2-1)s2^2 / n1 + n2 - 2
+Test of the difference in means (unequal variances) T = (x̄1 - x̄2) - (μ1 - μ2)/ (S1^2/n1 + S2^2/n2)^1/2 where df = (S1^2/n1 + S2^2/n2)^2/ (S1^2/n1)^2/n1 + (S2^2/n2)^2/n2
+Test of mean of differences T = d̄ -μd0/sd̄ where d̄ = 1/n*Sumdi
+Test of a single variance x^2 = (n-1)s^2/σ0^2
+Test of the differences in variances F = S1^2/S2^2
+Test of a correlation T = (n-2)^1/2 / (1-r^2)^1/2
+Regression coefficient Y = b0 + b1Xi + εi
+Assumptions of simple linear regression
+   Linearity: a linear relation exists between the dependent cariable and the independent variable.
+   Homoscedasticity: variance of the error term is the same for all observations
+   Independence: The error term is uncorrelated acreoss observations
+   Normality: The error term is normally distributed
+TSS=SSE + RSS
+Sum (Yi -  ̄y)^2 = sum (Yi - ŷ)^2+Sum(ŷi -  ̄y)^2
+where 
+   TSS: Total sum of squares (total variance)
+   SSE: Sum of squares errors (unexplained variance)
+   RSS: Regression sum of squares (explained variance)
+Coefficient of Determination R^2 = explained variance/total variance
+R^2 = TSS-SSE/TSS
+Standard error of estimate Se = Sqrt((Yi-ŷ)^2/n-2)
+F-Statistic F= (RSS/k)/(SSE/n)-(k+1) = MSR/MSE
+A significant F-stat implies the regression as a whole is significant.
+Where K is the number of slope coefficients
+Test of the Slope Coefficient
+   t= b̂1 - b1/Sb̂1
+   Sb̂1 = Se/((Xi-x̄)^2)^1/2
+Test of the intercept coefficient Tintercept = b̂0-B0/Sb̂0 ; where Sb̂0 = sqrt(1/n + x̄/(Xi-x̄)^2
+Prediction interval: ŷ +/- Tcritical * Sf; where Sf = Se Sqrt(1+1/n + (Xf - x̄)^2 / (Xi - x̄)^2 
+
+# Economics 
+   Price Elasticity of Demand %ΔQ/%ΔP = (P0/Q0) * (ΔQ/ΔP)
+         ΔQ/ΔP is the slope coefficient
+Demand elastic if absolute value > 1; demand inelastic if absolute value < 1
+Income elasticity of Demand : %ΔQ/%ΔI = (I0/Q0) * (ΔQ/ΔI)
+         (ΔQ/ΔI) is the sloce coefficient; normal good if positive ; inferior good if negative
+Cross elasticity of Demand %ΔQ/%ΔPc = (Pc/Q0) * (ΔQ/ΔPc);  Substitute good if positive; complementary good if negative
+Breakeven and shutdown points
+   Breakeven point = Total Revenue = Total Cost
+   Shutdown point (short run): Total Rev < Total Variable Cost
+   Shutdown point (long run): Total rev < Total Cost
+
+Firm Structures
+   Perfect competition: Numerous firms: low barriers to entry; homogenous products; no pricing power
+   Monopolisitc Competition: Numerous firms; low barriers to entry; differentiated products; some pricing power
+   Oligopoly: Few firms; high barriers to entry; products can be homogeneous or differentiated; significant pricing power
+   Monopoly: Single firm; high barriers to entry; high pricing power
+Profit maximization point (all firms) : Marginal rev = Marginal cost
+Gross domestic product (GDP) 
+   Expenditure approach = comsumption + investment + Gov spending+ net exports
+   Income approach = Household income + business income + Gov income
+   Value-added approach = Sum incremental value-added at each stage of production
+Nominal GDP = Pt * Qt
+Real GDP = Pb * Qt where b = base year price
+GDP Deflator = (value of current year output at current prices / value of current year output at base year prices) * 100
+National Income, personal income, and personal disposible income
+   National Income = Compensation of employees + Corp & govt profits before taxes + Interest income + unincorporated buss net income + rent + indirect buss taxes less subsidies
+   Personal income = National income - indirect business taxes - corporate income taxes - undistrobuted corp frofit + transfer payments
+   Personal disposable income = personal income - personal taxes
+Aggregate deman - shifts due to changes in household wealth, consumer and =business expectations, capacity utilization, monetary policy, fiscal policy, exchange rates, and foreign GDP
+Aggregate supply - Short-Run Shifts: Changes in changes in potential GDP, nominal wages, input prices, future price expectations, business taxes and subsidies and exchange rate
+Aggregate supply - Lon-run shifts: changes in labor supply, supply of physical and human capital and productivity and technology
+Growth Accounting Equation: Growth in potential GDP = Growth in technology + WL (Growth in labor) + Wc (growth in capital)
+Business cycle phases: Trough (lowest); expansion; peak (highest); contraction
+Economic indicators 
+   Leading: Turn ahead of peaks and troughs of business cycle (S&P500, manufacturing new order, building permits)
+   Coincidental: Turns coincide with phase of business cycle (employee payrolls, manufacturing sales, personal income)
+   Lagging: Turns after the business cycle movements (average prime rate, inventory-sales ratio, duration of unemployment)
+
+Types of unemployment
+   Frictional: unemployment from time lag to find new job
+   cyclical: unemployment due to business cycle fluctuations
+   Structural: unemployment due to lack of skills for job openings or distance factors
+Consumer price index: CPI = (Cost of basket at current prices / cost of basket at base period prices ) *100
+Monetary Policy: Central bank activities that influence the supply of money and credit; expansionary when policy rate < neitral interest rate; contractionary when policy rate > neutral interest rate
+Central bank objectives: Full employment and price stability
+Money multiplier = 1/reserve requirement
+Fiscal policy: govt decisions about taxation and spending; expansionary when govt budget balance decreasing; contractionary when gocvt budget balance increasing
+Fiscal multiplier = 1/ (1-MPC(1-t)
+Equation of Exchange: M * V = P * Y
+Gross domestic product (GDP) cs Gross national product (GNP)
+   GDP: Final value of goods and servies produced within a country.economy
+   GNP Final value of goods and services produced by citizens of a country/economy
+Regional Trading Agreements (RTA)
+   Free trade areas (FTA): Trade barriers removed amoug members; countries still have own policies against non-members
+   Customs Union: FTA with common policy against non-members
+   Common Market: Customs union with free movement of factors of production amoung members
+   Economic Union: All aspects of common market with common economic institutoins and economic policy
+   Monetary Union: If members of ecnomic union adopt a common currency
+Balance of Payments
+   Current account: measures flow of goods and sevices (merchange trade, services, income receipts, unilateral transfers)
+   Capital account: measures transfers of capital (capital transfers, sales & purchases of non-produced, non-financial assets)
+   Financial Account: Records incevestment flows (financial asserts abroad, foreign-owned financial assets)
+
+Real exchange rate (d/f) = Spot rate(d/f) * CPI Foreign/CPI domestic
+Change in Nominal exchange rate: Δexchange rate (d/f) = (spot rate (d/f) at the end of the period/spot rate d/f at the beginning)-1
+Change in Real exchange rate: ΔReal d/f = (1+(ΔSd/f)/(Sd/f)) * ((1+ΔPf/Pf)/ (1+ΔPd/Pd)) - 1
+Forward discount/premium = Forward( rate (d/f) / Spot rate d/f)-1
+No-arbitrage forward exchange rate = spot rate (d/f) * [(1+ domestic int rate *(actual/360))/(1+foreign int rate)*(actual/360)]
+Exchange rate regimes
+   Monetary Union: Members adopt common currency
+   Dollarization: Members adopt foreign currency
+   Fixed parity: +/-1 percent around the parity level
+   Target zone: up to 2+/- percent around the parity level
+   Crawling Peg: Pegged exchange rate periodically adjusted
+   Managed Float: Central bank acts to influence exchange rate without a specific target
+   Independent Float: Exchange rate freely determine by the market.
+
+# Financial Statement Analysis
