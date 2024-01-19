@@ -1,7 +1,18 @@
 # Financial-models
 Repository for snipits of python code on finance theories and models in order to develop both finance and coding skills. Incorporating study notes based on CFA Level I material.
 Models, charts, and other content are not for applied use. All products herein are to be considered incomplete, unaudited works in progress. 
-
+# Formulas
+WIP collection of CFA L1 formulas on:
+        Quantitative Methods 1/19/24
+        Economics 1/19/24
+        Financial Statement Analysis (TBC)
+        Corporate Issuers (TBC)
+        Equity (TBC)
+        Portfolio Management (TBC)
+        Fixed Income (TBC)
+        Derivatives (TBC)
+        Alernative Investments (TBC)
+        
 # Risk Parity Strategy
 Risk parity strategies became particularly popular after the 2008 financial crisis, as they aim to address 
 some of the shortcomings of traditional asset allocation models, like the 60/40 stock/bond split, which can
