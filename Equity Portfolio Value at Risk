@@ -1,0 +1,46 @@
+import yfinance as yf
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Define the list of stock symbols for your portfolio
+portfolio_symbols = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA']  # Replace with your own symbols
+
+# Fetch historical daily returns for the portfolio from Yahoo Finance
+portfolio_data = yf.download(portfolio_symbols, start='2022-01-01', end='2022-12-31', progress=False)['Adj Close'].pct_change().dropna()
+
+# Calculate VaR at a specific confidence level (e.g., 95% confidence level)
+confidence_level = 0.95
+
+# Calculate VaR for the portfolio
+portfolio_returns = portfolio_data.sum(axis=1)  # Calculate portfolio returns
+sorted_returns = np.sort(portfolio_returns)
+
+# Calculate the index corresponding to the confidence level
+var_index = int(len(sorted_returns) * (1 - confidence_level))
+
+# VaR calculation using historical data
+var = sorted_returns[var_index]
+
+# Convert VaR to a percentage
+var_percentage = var * 100
+
+# Create a histogram of portfolio returns
+plt.figure(figsize=(8, 4))
+plt.hist(portfolio_returns, bins=20, edgecolor='k', alpha=0.7)
+plt.xlabel('Portfolio Returns')
+plt.ylabel('Frequency')
+plt.title('Portfolio Returns Distribution')
+plt.grid(True)
+
+# Show VaR value on the histogram plot
+plt.axvline(var, color='r', linestyle='dashed', linewidth=1, label=f'{confidence_level*100}% VaR')
+plt.legend()
+
+# Display VaR value as text
+plt.text(var + 0.005, 4, f'{confidence_level*100}% VaR = {var_percentage:.2f}%', color='r')
+
+# Show the histogram plot
+plt.show()
+
+print(f"Value at Risk (VaR) at {confidence_level*100}% confidence level: {var_percentage:.2f}%")
