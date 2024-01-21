@@ -1,0 +1,47 @@
+#This code will calculate the theoretical price of a call option for a given stock (here, Apple Inc. as an example) using the Black-Scholes model. 
+#You'll need to replace the example values for the strike price, time to maturity, volatility, and risk-free interest rate with the actual values you want to use. 
+
+import yfinance as yf
+import numpy as np
+from scipy.stats import norm
+from datetime import datetime, timedelta
+
+# Black-Scholes Model
+def black_scholes(S, K, T, r, sigma, option_type="call"):
+    """
+    Calculate the Black-Scholes option price.
+    
+    Parameters:
+    S (float): Stock price
+    K (float): Strike price
+    T (float): Time to maturity in years
+    r (float): Risk-free interest rate
+    sigma (float): Volatility
+
+    Returns:
+    float: Option price
+    """
+    d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
+    d2 = d1 - sigma * np.sqrt(T)
+    
+    if option_type == "call":
+        return S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
+    else:
+        return K * np.exp(-r * T) * norm.cdf(-d2) - S * norm.cdf(-d1)
+
+# Parameters (example values, replace with real data)
+symbol = "AAPL"  # Example: Apple Inc.
+stock = yf.Ticker(symbol)
+current_price = stock.history(period="1d")["Close"].iloc[-1]  # Current stock price
+
+# Risk-free interest rate (example value, replace with real data)
+r = 0.01  # 1%
+
+# Choose a strike price, time to maturity, and volatility (example values)
+K = 150  # Strike price
+T = 1/12  # Time to maturity in years (1 month)
+sigma = 0.2  # Volatility (20%)
+
+# Calculate the call option price
+call_price = black_scholes(current_price, K, T, r, sigma, option_type="call")
+print(f"Theoretical Call Option Price: {call_price:.2f}")
