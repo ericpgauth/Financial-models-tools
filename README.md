@@ -52,4 +52,25 @@ investment relative to its risk. Also used to measure the performance of investm
     where Rp is the return of the portfolio, Rf is the risk free rate, and σp is the standard deviation of the portfolio's excess return.
     Excess return defined as returns earned by an investment above a benchmark return, typically the S&P500 or Risk free rate/10 Yr US Treasury.
     
+# Portfolio Value at Risk (VAR)
+Value at Risk (VaR) is a statistical measure used in finance to estimate the potential loss that an investment portfolio, trading position, or financial asset may experience over a specific time horizon at a certain level of confidence. In essence, VaR provides an estimate of the worst-case loss under normal market conditions. Here's an explanation of how VaR for a portfolio based on historical data works:
 
+    Time Horizon: VaR calculations are typically done for a specific time horizon, such as one day, one week, or one month. The time horizon represents the period over which the potential loss is estimated.
+
+    Confidence Level: The confidence level is a critical parameter in VaR calculations. It represents the level of confidence that the calculated VaR value will not be exceeded. For example, if you calculate VaR at a 95% confidence level, you are saying that you are 95% confident that the portfolio's loss will not exceed the VaR estimate over the chosen time horizon.
+
+    Historical Data: To calculate VaR, historical data of the portfolio's returns (or changes in value) are needed. These returns are usually expressed as percentages. The historical data provide a basis for assessing how the portfolio has performed in the past.
+
+    Sorting Returns: The historical returns are sorted in ascending order from worst to best performance. This sorted list allows you to determine the loss levels at various percentiles. For example, the loss at the 5th percentile represents the VaR at a 95% confidence level.
+
+    VaR Calculation: The VaR calculation involves finding the return value at the specified confidence level. This value is often referred to as the "critical value" or "cut-off point." It represents the maximum potential loss at the chosen confidence level.
+
+If you calculate VaR using historical data, you simply identify the return at the appropriate percentile. This becomes your VaR value.
+
+        For example, if you calculate VaR at a 95% confidence level and the return at the 5th percentile is -2%, it means you are 95% confident that the portfolio's daily loss will not exceed 2% over the chosen time horizon.
+
+    Interpretation: Once you have the VaR value, it is expressed as a percentage of the portfolio's initial value. This percentage represents the potential loss. In the example above, a 2% VaR at a 95% confidence level means that, under normal market conditions, you can expect a maximum loss of 2% in the portfolio over the specified time frame with a 95% confidence.
+
+    Risk Management: VaR is a valuable tool for risk management. It helps investors and financial institutions assess and manage their exposure to potential losses. It provides a clear picture of the downside risk associated with a portfolio, allowing for better decision-making regarding risk tolerance, hedging strategies, and asset allocation.
+
+It's important to note that VaR has its limitations, especially when dealing with extreme events or non-normal market conditions. It assumes that past market behavior is a reliable indicator of future performance, which may not always be the case. As a result, VaR is often used in conjunction with other risk measures and stress tests to provide a more comprehensive view of portfolio risk.
