@@ -74,3 +74,32 @@ If you calculate VaR using historical data, you simply identify the return at th
     Risk Management: VaR is a valuable tool for risk management. It helps investors and financial institutions assess and manage their exposure to potential losses. It provides a clear picture of the downside risk associated with a portfolio, allowing for better decision-making regarding risk tolerance, hedging strategies, and asset allocation.
 
 It's important to note that VaR has its limitations, especially when dealing with extreme events or non-normal market conditions. It assumes that past market behavior is a reliable indicator of future performance, which may not always be the case. As a result, VaR is often used in conjunction with other risk measures and stress tests to provide a more comprehensive view of portfolio risk.
+
+# BSM Derivative Pricing for European Options
+
+The Black-Scholes-Merton (BSM) model is a mathematical model used for pricing European-style options. Developed by Fischer Black, Myron Scholes, and Robert Merton in the early 1970s, it revolutionized the field of financial economics by providing a systematic method to price options, which are financial derivatives allowing the holder to buy (call option) or sell (put option) an underlying asset at a specified strike price on or before the option's expiration date.
+
+Here's a breakdown of the BSM model:
+
+1. **European Options**: The BSM model is specifically designed for European options, which can only be exercised at expiration, unlike American options that can be exercised at any time before expiration.
+
+2. **Underlying Asset**: The model assumes the price of the underlying asset (like a stock) follows a geometric Brownian motion, which means the asset's returns are normally distributed and its price log follows a random walk with constant drift and volatility.
+
+3. **Risk-free Rate**: The model uses a constant, known risk-free interest rate over the life of the option. This is typically approximated by the yield on government securities.
+
+4. **No Dividends**: In its basic form, the BSM model assumes that the underlying asset does not pay dividends. Modifications to the model can be made to account for dividends.
+
+5. **No Arbitrage**: The model assumes the absence of arbitrage opportunities (i.e., riskless profit).
+
+6. **Volatility**: The model incorporates the volatility of the asset's returns, which is a measure of how much the asset's price is expected to fluctuate over time. In practice, volatility can be historical (based on past price movements) or implied (derived from market prices of traded options).
+
+7. **Mathematical Formula**: The model expresses the option price as a function of these factors:
+   - **S** (current price of the asset)
+   - **K** (strike price of the option)
+   - **T** (time to expiration, in years)
+   - **r** (risk-free interest rate)
+   - **σ** (volatility of the asset's returns)
+
+8. **Limitations**: While the BSM model is groundbreaking and widely used, it has limitations. It assumes constant volatility and interest rates, and ignores the possibility of early exercise, making it less accurate for certain types of options.
+
+In summary, the BSM model provides a theoretical estimate of the price of a European option based on various factors like the asset's current price, time to expiration, volatility, and the risk-free rate. Despite its simplifying assumptions, it remains a fundamental tool in financial option pricing.
