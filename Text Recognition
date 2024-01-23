@@ -1,0 +1,8 @@
+# Alternative data analysis
+Text analysis to derive general themes and sentiment for bodies of text. 
+Experiment with text analysis charts
+
+Data Format Requirement - At minimum ability to handle HTML and PDF
+Word cloud can be unorganized, considering rank-ordering
+Sentiment follow on code with assigning words with values
+
