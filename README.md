@@ -3,15 +3,15 @@ Repository for snipits of python code on finance theories and models in order to
 Models, charts, and other content are not for applied use. All products herein are to be considered incomplete, unaudited works in progress. 
 # Formulas
 WIP collection of CFA L1 formulas on:
-        Quantitative Methods 1/19/24
-        Economics 1/19/24
-        Financial Statement Analysis (TBC)
-        Corporate Issuers (TBC)
-        Equity (TBC)
-        Portfolio Management (TBC)
-        Fixed Income (TBC)
-        Derivatives (TBC)
-        Alernative Investments (TBC)
+        Quantitative Methods
+        Economics 
+        Financial Statement Analysis 
+        Corporate Issuers 
+        Equity 
+        Portfolio Management 
+        Fixed Income 
+        Derivatives 
+        Alernative Investments 
         
 # Risk Parity Strategy
 Risk parity strategies became particularly popular after the 2008 financial crisis, as they aim to address 
