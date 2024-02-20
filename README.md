@@ -1,3 +1,6 @@
+Repository for snipits of python code on finance theories and models in order to develop both finance and coding skills. Incorporating study notes based on my Master's of Finance and the CFA curriculum. Models, charts, and othe rcontent are not for applied use. All products herin are to be considered incomplete, unaudited works in progress.  
+
+
 # Financial-models
 Repository for snipits of python code on finance theories and models in order to develop both finance and coding skills. Incorporating study notes based on CFA Level I material.
 Models, charts, and other content are not for applied use. All products herein are to be considered incomplete, unaudited works in progress. 
