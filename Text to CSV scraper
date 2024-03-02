@@ -1,0 +1,29 @@
+import requests
+from bs4 import BeautifulSoup
+import csv
+
+# Replace 'your_website_link_here' with the actual URL you want to scrape
+url = '######Replace with URL#####'
+
+# Send a GET request to the website
+response = requests.get(url)
+
+# Parse the HTML content of the page
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Find the text you want to scrape. This might need to be adjusted
+# depending on the structure of the webpage.
+# For example, if you're scraping all paragraph texts:
+texts = [p.text for p in soup.find_all('p')]
+
+# Specify the path to your downloads folder and name of the CSV file
+# You might need to change 'your_downloads_folder_path' to the actual path
+file_path = 'C:/Users/###Update with file path###'
+
+# Write the scraped texts to a CSV file
+with open(file_path, 'w', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    for text in texts:
+        writer.writerow([text])
+
+print(f'Scraped texts have been saved to {file_path}')
