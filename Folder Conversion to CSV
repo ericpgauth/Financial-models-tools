@@ -1,0 +1,71 @@
+
+import os
+import pandas as pd
+
+# Folder containing Excel files
+folder_path = r'C:\Users\EricG'  # Replace with your folder path
+
+# Function to clean the data by removing commas, dollar signs, and Em dashes
+def clean_data(value):
+    if isinstance(value, str):
+        value = value.replace(',', '')  # Remove commas
+        value = value.replace('—', '')  # Remove Em dashes
+        value = value.replace('$', '')  # Remove dollar signs
+    return value
+
+# Function to format the PayCycleDate column
+def format_pay_cycle_date(df):
+    if 'PayCycleDate' in df.columns:
+        df['PayCycleDate'] = pd.to_datetime(df['PayCycleDate']).dt.strftime('%m-%Y')
+    return df
+
+# Function to clean and convert monetary columns to numeric; add columns as needed
+def clean_monetary_columns(df):
+    monetary_columns = [
+        'InvestedAmount'
+    ]
+    
+    for col in monetary_columns:
+        if col in df.columns:
+            # Apply cleaning function and convert to numeric
+            df[col] = df[col].apply(clean_data).astype(float)
+    
+    return df
+
+# Function to format FirmP as a decimal; update columns as needed
+def format_firm_percentage(df):
+    if 'FirmP' in df.columns:
+        # Convert the percentage to a decimal
+        df['FirmP'] = df['FirmP'].astype(float) / 100
+    return df
+
+# Iterate over all files in the folder
+for file_name in os.listdir(folder_path):
+    if file_name.endswith('.xlsx'):  # Process only Excel files
+        file_path = os.path.join(folder_path, file_name)
+        
+        # Load the Excel file
+        df = pd.read_excel(file_path)
+        
+        # Apply the cleaning function to all elements in the DataFrame
+        df = df.applymap(clean_data)
+        
+        # Format the PayCycleDate column
+        df = format_pay_cycle_date(df)
+        
+        # Clean and convert monetary columns
+        df = clean_monetary_columns(df)
+        
+        # Format the FirmPercentage column
+        df = format_firm_percentage(df)
+        
+        # Generate the output CSV file path
+        csv_file_name = f"{os.path.splitext(file_name)[0]}.csv"
+        csv_file_path = os.path.join(folder_path, csv_file_name)
+        
+        # Save the cleaned and formatted data to a CSV file with UTF-8 encoding
+        df.to_csv(csv_file_path, encoding='utf-8', index=False)
+        
+        print(f"Converted and saved: {csv_file_name}")
+
+print("All files have been processed.")
