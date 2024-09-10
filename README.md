@@ -5,7 +5,7 @@ Repository for snipits of python code on finance theories and models in order to
 Repository for snipits of python code on finance theories and models in order to develop both finance and coding skills. Incorporating study notes based on CFA Level I material.
 Models, charts, and other content are not for applied use. All products herein are to be considered incomplete, unaudited works in progress. 
 # Formulas
-WIP collection of CFA L1 formulas on:
+WIP collection of financial formulas on:
         Quantitative Methods
         Economics 
         Financial Statement Analysis 
