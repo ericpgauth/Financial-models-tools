@@ -18,7 +18,7 @@ WIP collection of financial formulas on:
 # Tools
 Various snippits of code with varying purposes will be stored here to facilitate analysis. These require aditional customization and technical knowledge to implement. Use at your own risk.
         - CSV conversion: Select file/folder with excel documents and export in a UTF-8 encoded CSV file; a common format for loading files to a database management system (DBMS).
-        - 
+        - Text to CSV scraper: Select URL to scrape, data is exported as a CSV.
 # Risk Parity Strategy
 Risk parity strategies became particularly popular after the 2008 financial crisis, as they aim to address 
 some of the shortcomings of traditional asset allocation models, like the 60/40 stock/bond split, which can
