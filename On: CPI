@@ -1,0 +1,59 @@
+Published by BLS
+The Bureau of Labor Statistics (BLS) is the primary source of key economic data in the U.S., including employment, inflation, and price indices. Among these, the Consumer Price Index (CPI) stands out as a critical measure of inflation.
+
+    BLS publishes a release calendar, which outlines scheduled data releases, such as the CPI report. This calendar can be integrated into Google calendars, enabling stakeholders to anticipate important data announcements that can influence economic decisions.
+
+CPI (Consumer Price Index) Overview
+The CPI tracks changes in the price level of a market basket of consumer goods and services purchased by households. This basket includes categories such as food, housing, apparel, transportation, and medical care.
+Two Key Population Groups:
+
+    All Urban Consumers (~90% of the U.S. population):
+    This group represents the broadest category of consumers, encompassing all urban households, regardless of income or employment status.
+        CPI-U (Consumer Price Index for All Urban Consumers): This is the most widely cited CPI measure. It reflects inflation for urban households and is published in final form, unlike GDP figures which are released in multiple stages (Preliminary, Advanced, and Final).
+        C-CPI-U (Chained CPI for All Urban Consumers):
+            The Chained CPI takes into account substitution bias—the tendency of consumers to switch to cheaper alternatives as prices for certain goods increase. This makes C-CPI-U a closer approximation of a true cost-of-living index.
+            C-CPI-U is issued in preliminary form and undergoes four quarterly revisions before finalization. This adjustment period reflects ongoing refinements in how consumer behavior and price data are measured.
+
+    All Urban Wage Earners and Clerical Workers (~30% of the population):
+    This group is a subset of the urban consumer population and is often used in cost-of-living adjustments (COLAs) for labor contracts and government benefits.
+        CPI-W (Consumer Price Index for Urban Wage Earners and Clerical Workers): This index is calculated similarly to the CPI-U but includes only households where more than 50% of income is derived from wage or clerical work, and at least one household member is employed for 37 weeks or more during the previous 12 months.
+        The CPI-W is commonly used for adjusting Social Security benefits and other government assistance programs, as well as in union wage negotiations.
+
+Data Collection
+
+    Price collection for the CPI takes place in 75 urban centers, where BLS collects data from approximately 6,000 housing units and 22,000 retail establishments. These locations are chosen to reflect a representative sample of the U.S. urban population.
+    Tax Inclusion: All taxes directly associated with goods and services (e.g., sales tax) are included in the price measurements.
+    Collection Frequency:
+        For items like fuel, which are subject to frequent price changes, prices are collected monthly in all 75 locations.
+        For other goods and services, BLS collects prices every month in the three largest geographical areas and every other month in smaller areas.
+
+Weights and Importance
+Each item in the CPI is assigned a weight, representing its importance in the overall consumer spending pattern. For instance, housing typically carries a higher weight due to its significant share of household expenditure. These weights are updated periodically to reflect shifts in consumer behavior, ensuring the CPI remains relevant over time.
+CPI Indexes and Coverage:
+
+    CPI-U and CPI-W are available by city and region (e.g., Northeast, Midwest, South, and West). This geographic breakdown helps analysts and policymakers understand how inflation varies across different parts of the country.
+    C-CPI-U, however, is only available at the national level, as the substitution effects it accounts for are calculated using national data, making regional distinctions less feasible.
+
+Seasonal Adjustments and Unadjusted Data:
+
+    Seasonally Adjusted Data
+        The CPI is also provided in seasonally adjusted form, which accounts for predictable seasonal price fluctuations (e.g., higher energy costs in winter, lower apparel prices after holiday sales).
+        Seasonal adjustment factors are updated every February, and new factors are used to revise the previous five years of seasonally adjusted data. This adjusted data is especially useful for analyzing short-term price trends (less than one year), as it removes distortions caused by seasonal price changes
+
+    Unadjusted Data
+        Unadjusted CPI measures the actual prices that consumers pay, without removing seasonal effects. This version of the CPI is used for long-term price analysis and is important in contracts with cost-of-living adjustments (COLA), such as those related to Social Security benefits and labor agreements.
+        Since seasonal adjustments are only applied for the past five years, the unadjusted CPI is more appropriate for analyzing longer-term price trends beyond that period.
+
+Key CPI Tables and Reports:
+
+    Table 1: The primary aggregate table for the CPI-U, which provides a comprehensive breakdown of seasonal adjustment factors for use with the all-urban CPI. These factors are essential for stakeholders who need to account for seasonal variations in price trends.
+
+    The CPI index reports often include detailed breakdowns, allowing users to analyze specific categories and geographic areas. The index section of these reports contains spreadsheets that can be used to extract and compare data across different timeframes or item categories.
+
+    Chained CPI (C-CPI-U): This variant of the CPI aims to reflect what consumers actually paid, accounting for their substitution behaviors when they adjust their spending in response to price changes. This measure can differ from the standard CPI-U due to the dynamic way it reflects consumer choices.
+
+Key CPI Categories:
+
+    All Items (Headline): This includes food and energy prices, which are known for being volatile. These two categories can heavily influence the overall inflation rate, so the headline CPI often reflects short-term fluctuations caused by spikes in fuel or food prices.
+    All Items Excluding Food and Energy (Core): The core CPI excludes the volatile food and energy sectors and is used to measure underlying inflation trends. Analysts and policymakers often rely on this metric to get a clearer picture of long-term inflationary pressures, as it removes the noise caused by sharp but temporary price swings in those categories.
+
