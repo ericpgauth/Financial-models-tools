@@ -1,6 +1,58 @@
+Sharpe Ratio Optimized Portfolio: Overview
+
+This strategy aims to maximize the Sharpe Ratio of a portfolio, a key metric in finance that measures risk-adjusted return. The Sharpe Ratio is defined as:
+Sharpe Ratio=Portfolio Return−Risk-Free RatePortfolio Volatility
+Sharpe Ratio=Portfolio VolatilityPortfolio Return−Risk-Free Rate​
+
+The goal is to find a portfolio allocation that maximizes this ratio by balancing return and risk, assuming the higher the Sharpe Ratio, the more attractive 
+the risk-adjusted return of the portfolio.
+
+Why Use a Sharpe Ratio Optimized Portfolio?
+
+    Maximizing Risk-Adjusted Returns: The Sharpe Ratio allows investors to compare portfolios with different levels of risk. By optimizing for the highest Sharpe Ratio, 
+you're looking for the best possible return given the level of risk, accounting for the risk-free rate (e.g., Treasury bills).
+
+    Efficient Portfolio Construction: This approach helps build a portfolio on the efficient frontier, meaning you achieve the highest expected return for a
+given level of volatility. This aligns with the principles of Modern Portfolio Theory (MPT).
+
+Key Components of the Code:
+
+    Fetching Historical Data: The historical adjusted closing prices of assets (e.g., spy, qqq, etc.) are pulled using the yfinance library. 
+The returns are then computed as daily percentage changes.
+
+    Optimization Function: The portfolio optimization is performed by minimizing the negative Sharpe Ratio, which is achieved using the Sequential Least Squares 
+Programming (SLSQP) algorithm from the scipy.optimize library. The constraints include:
+        Sum of portfolio weights must equal 1 (all capital is allocated).
+        No short selling, i.e., each weight is constrained between 5% and 30% of the total portfolio (adjustable bounds).
+
+    Portfolio Characteristics:
+        Return: Computed as the weighted average of individual asset returns.
+        Volatility: Portfolio risk is calculated as the square root of the weighted covariance matrix of asset returns.
+        Sharpe Ratio: This is computed by subtracting the risk-free rate from the portfolio return and dividing by the portfolio volatility.
+
+Advantages of Sharpe Ratio Optimization:
+
+    Risk-Return Tradeoff: This method provides a balance between achieving high returns while controlling for risk. It's an excellent strategy for investors 
+who want to ensure they're compensated for the risk they're taking on.
+
+    Flexible Constraints: The allocation can be customized with upper and lower bounds (e.g., 5%-30% allocation per asset), making the strategy adaptable to 
+different risk appetites and market conditions.
+
+    Backtesting and Analysis: The cumulative returns of the portfolio over time allow investors to see how the portfolio would have performed historically, 
+adding an important dimension to evaluating its effectiveness.
+
+Limitations:
+
+    Dependence on Historical Data: Like most quantitative strategies, Sharpe Ratio optimization is based on historical return and volatility data,
+which may not always predict future performance.
+
+    Fixed Risk-Free Rate: The risk-free rate is set as a constant (e.g., 4%). Changes in the actual rate could affect the Sharpe Ratio and the attractiveness 
+of the portfolio.
+
+    No Tail Risk Management: The Sharpe Ratio focuses on volatility as a risk measure, but it doesn't account for other risks such as extreme market events 
+(tail risks) or liquidity risks.
+_______________________________________________________________________________________________________________________________
 #This code attempts to model a Sharpe optimized portfolio using historical data.
-
-
 
 import yfinance as yf
 import pandas as pd
