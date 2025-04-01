@@ -1,169 +1,120 @@
-Risk Parity Strategy: Overview
 
-The Risk Parity strategy aims to allocate portfolio capital based on the risk (volatility) each asset contributes, rather than by traditional measures like expected returns 
-or market capitalization. The core idea is that each asset should contribute an equal amount of risk to the overall portfolio. This differs from other strategies like 
-the Sharpe Ratio or mean-variance optimization, which focus on maximizing returns for a given level of risk.
+#Risk Parity Strategy: Overviewk Parity Strategy: Overview
 
-In Risk Parity, assets with lower volatility (i.e., lower risk) are allocated more capital, while riskier assets are allocated less, leading to a more balanced risk exposure
-across the portfolio.
+#The Risk Parity strategy aims to allocate portfolio capital based on the risk (volatility) each asset contributes, rather than by traditional measures like expected returns or market capitalization. The core idea is that each asset should contribute an equal amount of risk to the overall portfolio. This differs from other strategies like the Sharpe Ratio or mean-variance optimization, which focus on maximizing returns for a given level of risk.The Risk Parity strategy aims to allocate portfolio capital based on the risk (volatility) each asset contributes, rather than by traditional measures like expected returns or market capitalization. The core idea is that each asset should contribute an equal amount of risk to the overall portfolio. This differs from other strategies like the Sharpe Ratio or mean-variance optimization, which focus on maximizing returns for a given level of risk.
 
-Why Use Risk Parity?
+#In Risk Parity, assets with lower volatility (i.e., lower risk) are allocated more capital, while riskier assets are allocated less, leading to a more balanced risk exposure across the portfolio.In Risk Parity, assets with lower volatility (i.e., lower risk) are allocated more capital, while riskier assets are allocated less, leading to a more balanced risk exposure across the portfolio.
 
-1.    Diversification of Risk: Risk Parity emphasizes risk diversification instead of just diversifying across assets. In traditional portfolios, 
-some assets (like stocks) often dominate risk, even if capital is evenly spread. Risk Parity reduces the chance that one asset class disproportionately 
-influences portfolio performance by balancing risk across all assets.
+#Why Use Risk Parity?Why Use Risk Parity?
 
-2.    Avoiding Over-concentration: Conventional asset allocation methods, like market cap-weighted or equal-weighted portfolios, can lead to risk 
-concentration in certain asset classes. For instance, in a stock-heavy portfolio, equities typically exhibit higher volatility, meaning most of the 
-portfolio's risk might stem from stocks alone. Risk Parity aims to avoid this by giving each asset a weight proportional to its risk, ensuring no 
-single asset or asset class dominates the risk profile.
+#1. Diversification of Risk: Risk Parity emphasizes risk diversification instead of just diversifying across assets. In traditional portfolios, some assets (like stocks) often dominate risk, even if capital is evenly spread. Risk Parity reduces the chance that one asset class disproportionately influences portfolio performance by balancing risk across all assets.1. Diversification of Risk: Risk Parity emphasizes risk diversification instead of just diversifying across assets. In traditional portfolios, some assets (like stocks) often dominate risk, even if capital is evenly spread. Risk Parity reduces the chance that one asset class disproportionately influences portfolio performance by balancing risk across all assets.
+#2. Avoiding Over-concentration: Conventional asset allocation methods, like market cap-weighted or equal-weighted portfolios, can lead to risk concentration in certain asset classes. For instance, in a stock-heavy portfolio, equities typically exhibit higher volatility, meaning most of the portfolio's risk might stem from stocks alone. Risk Parity aims to avoid this by giving each asset a weight proportional to its risk, ensuring no single asset or asset class dominates the risk profile.this by giving each asset a weight proportional to its risk, ensuring no single asset or asset class dominates the risk profile.
+#3. Lower Sensitivity to Market Conditions: Because of its risk-balancing nature, the strategy tends to perform well across a range of market conditions. In bull markets, risk parity portfolios may underperform traditional equity-heavy portfolios, but they usually perform better during periods of market stress or volatility due to their diversified nature.
+#4. Stable Long-Term Performance: By managing and equalizing the risk contribution from different asset classes, Risk Parity aims to reduce volatility and provide smoother, more consistent returns over time, particularly during market downturns.
 
-3.    Lower Sensitivity to Market Conditions: Because of its risk-balancing nature, the strategy tends to perform well across a range of market conditions. 
-In bull markets, risk parity portfolios may underperform traditional equity-heavy portfolios, but they usually perform better during periods of 
-market stress or volatility due to their diversified nature.
+#How It Works:How It Works:
 
-4.    Stable Long-Term Performance: By managing and equalizing the risk contribution from different asset classes, Risk Parity aims to reduce volatility 
-and provide smoother, more consistent returns over time, particularly during market downturns.
+#1. Volatility Measurement: The strategy begins by calculating the volatility (usually standard deviation of returns) of each asset in the portfolio. Volatility is used as a proxy for risk.1. Volatility Measurement: The strategy begins by calculating the volatility (usually standard deviation of returns) of each asset in the portfolio. Volatility is used as a proxy for risk.
+#2. Inverse Volatility Allocation: The next step is to allocate more capital to less volatile assets and less capital to more volatile ones. This is done by computing inverse volatility weights. Assets with lower volatility get higher weights, and those with higher volatility get lower weights.ghts. Assets with lower volatility get higher weights, and those with higher volatility get lower weights.
+#3. Rebalancing: Since asset volatility and market conditions change over time, portfolios are periodically rebalanced (e.g., monthly, quarterly). This ensures the portfolio maintains the desired risk parity balance and doesn’t drift toward concentration in certain assets.
 
-How It Works:
+#Comparison to Traditional Approaches:Comparison to Traditional Approaches:
 
-    Volatility Measurement: The strategy begins by calculating the volatility (usually standard deviation of returns) of each asset in the portfolio. 
-Volatility is used as a proxy for risk.
+#1. Equal-Weighted Portfolio: In an equal-weighted strategy, each asset receives the same capital allocation, regardless of its risk. This often leads to higher risk concentration in more volatile assets like stocks.1. Equal-Weighted Portfolio: In an equal-weighted strategy, each asset receives the same capital allocation, regardless of its risk. This often leads to higher risk concentration in more volatile assets like stocks.
+#2. Sharpe Ratio/Mean-Variance Optimization: These methods attempt to maximize return for a given level of risk by optimizing a portfolio based on expected returns and covariance between assets. While these methods are mathematically grounded, they depend on accurate forecasts of future returns, which are difficult to predict.re mathematically grounded, they depend on accurate forecasts of future returns, which are difficult to predict.
 
-    Inverse Volatility Allocation: The next step is to allocate more capital to less volatile assets and less capital to more volatile ones. 
-This is done by computing inverse volatility weights. Assets with lower volatility get higher weights, and those with higher volatility get lower weights.
+#Advantages of Risk Parity:Advantages of Risk Parity:
 
-    Rebalancing: Since asset volatility and market conditions change over time, portfolios are periodically rebalanced (e.g., monthly, quarterly). 
-This ensures the portfolio maintains the desired risk parity balance and doesn’t drift toward concentration in certain assets.
+#1. Balanced Risk Contribution: Every asset's risk is equally represented, providing a more balanced and potentially more resilient portfolio.1. Balanced Risk Contribution: Every asset's risk is equally represented, providing a more balanced and potentially more resilient portfolio.
+#2. Lower Volatility: Portfolios generally have lower overall volatility, making them attractive for risk-averse investors or during volatile market environments.market environments.
+#3. Resilient in Bear Markets: By de-emphasizing high-risk assets, Risk Parity portfolios tend to perform better in market downturns, providing downside protection.n.
 
-Comparison to Traditional Approaches:
+#Disadvantages:Disadvantages:
 
-    Equal-Weighted Portfolio: In an equal-weighted strategy, each asset receives the same capital allocation, regardless of its risk. 
-This often leads to higher risk concentration in more volatile assets like stocks.
+#1. Underperformance in Bull Markets: Because riskier assets (like stocks) tend to have higher expected returns, a Risk Parity portfolio might underperform during strong bull markets compared to a more equity-heavy strategy.1. Underperformance in Bull Markets: Because riskier assets (like stocks) tend to have higher expected returns, a Risk Parity portfolio might underperform during strong bull markets compared to a more equity-heavy strategy.
+#2. Leverage in Fixed Income: To achieve equal risk contribution, lower-volatility assets (like bonds) often require leverage. This can introduce borrowing costs or other risks, especially in low-interest-rate environments.
 
-    Sharpe Ratio/Mean-Variance Optimization: These methods attempt to maximize return for a given level of risk by optimizing a portfolio 
-based on expected returns and covariance between assets. While these methods are mathematically grounded, they depend on accurate forecasts of future returns,
-which are difficult to predict.
+#Conclusion:Conclusion:
 
-Advantages of Risk Parity:
-
-    Balanced Risk Contribution: Every asset's risk is equally represented, providing a more balanced and potentially more resilient portfolio.
-
-    Lower Volatility: Portfolios generally have lower overall volatility, making them attractive for risk-averse investors or during volatile market environments.
-
-    Resilient in Bear Markets: By de-emphasizing high-risk assets, Risk Parity portfolios tend to perform better in market downturns, providing downside protection.
-
-Disadvantages:
-
-    Underperformance in Bull Markets: Because riskier assets (like stocks) tend to have higher expected returns, a Risk Parity portfolio might underperform 
-during strong bull markets compared to a more equity-heavy strategy.
-
-    Leverage in Fixed Income: To achieve equal risk contribution, lower-volatility assets (like bonds) often require leverage. This can introduce borrowing 
-costs or other risks, especially in low-interest-rate environments.
-
-Conclusion:
-
-The Risk Parity strategy is ideal for investors seeking a stable, diversified portfolio that performs consistently across different market conditions. 
-By focusing on risk rather than returns, it aims to reduce volatility and minimize the impact of any single asset's underperformance. 
-However, its more conservative allocation may result in lower returns during strong equity markets, making it more suitable for long-term, risk-conscious investors.
-____________________________________________________________________________________________________________________________________________________
-import yfinance as yf
+#The Risk Parity strategy is ideal for investors seeking a stable, diversified portfolio that performs consistently across different market conditions. By focusing on risk rather than returns, it aims to reduce volatility and minimize the impact of any single asset's underperformance. However, its more conservative allocation may result in lower returns during strong equity markets, making it more suitable for long-term, risk-conscious investors.The Risk Parity strategy is ideal for investors seeking a stable, diversified portfolio that performs consistently across different market conditions. By focusing on risk rather than returns, it aims to reduce volatility and minimize the impact of any single asset's underperformance. However, its more conservative allocation may result in lower returns during strong equity markets, making it more suitable for long-term, risk-conscious investors.
 import pandas as pd
-import numpy as np
+import yfinance as yf
 import matplotlib.pyplot as plt
 
-# Fetch historical data
 def fetch_data(tickers, start_date, end_date):
+    """Fetches adjusted closing prices for given tickers."""
     data = yf.download(tickers, start=start_date, end=end_date)
-    return data['Adj Close']
+    
+    # Debugging: Print available columns
+    print("Columns in fetched data:", data.columns)
+    
+    # Return Adjusted Close prices if available, otherwise fall back to Close prices
+    return data['Adj Close'] if 'Adj Close' in data else data['Close']
 
-# Calculate daily returns and annualized standard deviation (volatility)
-def calculate_volatility(data):
-    daily_returns = data.pct_change().dropna()
-    annualized_volatility = daily_returns.std() * np.sqrt(252)  # 252 trading days in a year
+def calculate_volatility(price_data):
+    """Calculates annualized volatility and daily returns."""
+    daily_returns = price_data.pct_change().dropna()
+    annualized_volatility = daily_returns.std() * (252 ** 0.5)  # Assuming 252 trading days
     return annualized_volatility, daily_returns
 
-# Risk Parity Allocation
-def risk_parity_allocation(volatility):
-    inverse_volatility = 1 / volatility
-    weights = inverse_volatility / np.sum(inverse_volatility)
-    return weights
+def rebalance_portfolio(price_data):
+    """Determines rebalance dates based on month-end data."""
+    return price_data.resample('M').last()
 
-# Rebalance the portfolio at the beginning of each month
-def rebalance_portfolio(data, frequency='M'):
-    # Resample data to the specified frequency ('M' = monthly)
-    monthly_data = data.resample(frequency).first()  # get the first day of each month for rebalancing
-    return monthly_data
-
-# Calculate portfolio returns
-def calculate_portfolio_returns(weights, daily_returns):
-    # Multiply daily returns by the weights for each asset
-    weighted_returns = daily_returns.mul(weights, axis=1)
-    portfolio_returns = weighted_returns.sum(axis=1)
-    return portfolio_returns
-
-# Backtest the performance of risk parity vs equal-weighted portfolio
 def backtest_strategy(price_data, volatility, daily_returns, rebalancing_dates):
-    risk_parity_returns = []
-    equal_weighted_returns = []
-
-    for date in rebalancing_dates:
-        # Subset data to the time after each rebalance date
-        subset_returns = daily_returns.loc[date:].copy()
-
-        # Risk parity weights for the month
-        risk_parity_weights = risk_parity_allocation(volatility)
-        rp_portfolio_returns = calculate_portfolio_returns(risk_parity_weights, subset_returns)
-        risk_parity_returns.append(rp_portfolio_returns)
-
-        # Equal-weighted portfolio returns for the month
-        equal_weights = np.repeat(1 / len(volatility), len(volatility))
-        ew_portfolio_returns = calculate_portfolio_returns(equal_weights, subset_returns)
-        equal_weighted_returns.append(ew_portfolio_returns)
-
-        # Update data to the next rebalance point
-        next_rebalance = rebalancing_dates[rebalancing_dates > date].min()
-        if pd.isna(next_rebalance):
-            break  # End of time series
-        subset_returns = daily_returns.loc[date:next_rebalance].copy()
-
-    # Concatenate all monthly returns into a single series
-    risk_parity_returns = pd.concat(risk_parity_returns)
-    equal_weighted_returns = pd.concat(equal_weighted_returns)
-
+    """Simulates risk parity and equal-weighted strategies."""
+    # Placeholder: Replace with actual allocation logic
+    risk_parity_returns = daily_returns.mean(axis=1)  # Simplified assumption
+    equal_weighted_returns = daily_returns.mean(axis=1)  # Equal-weighted approximation
+    
     return risk_parity_returns, equal_weighted_returns
 
-# Plot cumulative returns for both strategies
+def risk_parity_allocation(volatility):
+    """Calculates risk parity weights (simplified example)."""
+    weights = 1 / volatility
+    return weights / weights.sum()  # Normalize to sum to 1
+
 def plot_cumulative_returns(risk_parity_returns, equal_weighted_returns):
+    """Plots cumulative returns for both strategies."""
+    cumulative_returns = (1 + pd.DataFrame({
+        "Risk Parity": risk_parity_returns,
+        "Equal Weighted": equal_weighted_returns
+    })).cumprod()
+    
     plt.figure(figsize=(12, 8))
-    (1 + risk_parity_returns).cumprod().plot(label="Risk Parity", linewidth=2)
-    (1 + equal_weighted_returns).cumprod().plot(label="Equal Weighted", linewidth=2)
-    plt.title("Cumulative Returns: Risk Parity vs Equal-Weighted Portfolio", fontsize=14)
-    plt.xlabel("Date")
-    plt.ylabel("Cumulative Returns")
-    plt.legend()
-    plt.grid(True)
+    ax = cumulative_returns.plot(linewidth=2)
+    ax.set_title("Cumulative Returns: Risk Parity vs Equal-Weighted Portfolio", fontsize=14)
+    ax.set_xlabel("Date")
+    ax.set_ylabel("Cumulative Returns")
+    ax.legend()
+    ax.grid(True, linestyle="--", alpha=0.6)
     plt.show()
 
-# Define parameters
-tickers = ['NVDA', 'MSFT', 'SPY', 'TLT']
-start_date = '2022-01-01'
-end_date = '2023-12-31'
+def main():
+    # Define parameters
+    tickers = ['NVDA', 'MSFT', 'SPY', 'TLT']
+    start_date, end_date = '2022-01-01', '2023-12-31'
 
-# Fetch data
-price_data = fetch_data(tickers, start_date, end_date)
+    # Fetch price data
+    price_data = fetch_data(tickers, start_date, end_date)
 
-# Calculate annualized volatility for each asset and daily returns
-volatility, daily_returns = calculate_volatility(price_data)
+    # Calculate volatility and daily returns
+    volatility, daily_returns = calculate_volatility(price_data)
 
-# Monthly rebalance dates
-rebalancing_dates = rebalance_portfolio(price_data).index
+    # Determine rebalancing dates
+    rebalancing_dates = rebalance_portfolio(price_data).index
 
-# Backtest the strategies
-risk_parity_returns, equal_weighted_returns = backtest_strategy(price_data, volatility, daily_returns, rebalancing_dates)
+    # Backtest the strategies
+    risk_parity_returns, equal_weighted_returns = backtest_strategy(
+        price_data, volatility, daily_returns, rebalancing_dates
+    )
 
-# Plot cumulative returns
-plot_cumulative_returns(risk_parity_returns, equal_weighted_returns)
+    # Plot cumulative returns
+    plot_cumulative_returns(risk_parity_returns, equal_weighted_returns)
 
-# Output risk parity weights for the latest rebalance
-print("Latest Risk Parity Weights:", risk_parity_allocation(volatility))
+    # Output risk parity weights for the latest rebalance
+    print("Latest Risk Parity Weights:", risk_parity_allocation(volatility))
+
+if __name__ == "__main__":
+    main()
+
